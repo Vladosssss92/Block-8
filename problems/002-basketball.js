@@ -15,7 +15,20 @@
  * @param {string[]} points
  * @returns {(number|undefined)}
  */
+
 function getWinner(points) {
+    let element = 0;
+    let counter = 0;
+    for (let elem of points) {
+        element = elem.split("-");
+        counter += element[0] - element[1];
+    }
+    if (counter < 0) {
+        return 2;
+    }
+    if (counter > 0) {
+        return 1;
+    }
     return undefined;
 }
 
