@@ -13,7 +13,15 @@
  * @returns {number}
  */
 function sum(n) {
-    return n;
+    let result = 0;
+    if (n <= 0) {
+        return 1;
+    } else {
+        for (let i = 0; i < n; n--) {
+            result += n;
+        }
+        return result;
+    }
 }
 
 module.exports = sum;
