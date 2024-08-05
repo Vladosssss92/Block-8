@@ -12,7 +12,7 @@
  * @returns {number|undefined}
  */
 function getPower(n) {
-    return -1;
+    return undefined;
 }
 
-module.exports = getPower;
+// module.exports = getPower;

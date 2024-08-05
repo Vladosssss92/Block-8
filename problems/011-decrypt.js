@@ -16,7 +16,23 @@
  * @returns {string}
  */
 function decrypt(secret) {
-    return undefined;
+    let arrSymbol = "abcdefghijklmnopqrstuvwxyz".split("");
+    let decrypt = [];
+    for (let i = 0; i < secret.length; i++) {
+        if (secret[i] === " ") {
+            decrypt.push(" ");
+        }
+        for (let j = 0; j < arrSymbol.length; j++) {
+            if (secret[i] === arrSymbol[j]) {
+                if (j >= arrSymbol.length - 1) {
+                    decrypt.push(arrSymbol[0]);
+                } else {
+                    decrypt.push(arrSymbol[j + 1]);
+                }
+            }
+        }
+    }
+    return decrypt.join("");
 }
 
 module.exports = decrypt;
