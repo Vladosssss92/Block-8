@@ -18,7 +18,26 @@
  * @returns {boolean}
  */
 function validatePassword(password) {
-    return undefined;
+    let newArr = password.split("");
+    let validPasswordArr = [];
+    let validUpperCase = false;
+    let validNumber = false;
+    if (password.length > 6) {
+        validPasswordArr.push(true);
+    } else validPasswordArr.push(false);
+
+    for (let elem of newArr) {
+        if (elem === elem.toUpperCase() && !Number(elem)) {
+            validUpperCase = true;
+        }
+        if (Number(elem)) {
+            validNumber = true;
+        }
+    }
+    validPasswordArr.push(validUpperCase, validNumber);
+    if (validPasswordArr.includes(false)) {
+        return false;
+    } else return true;
 }
 
 module.exports = validatePassword;
