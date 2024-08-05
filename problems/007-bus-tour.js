@@ -12,7 +12,14 @@
  * @returns {undefined|number}
  */
 function checkBusTour(bridges) {
-    return -1;
+    let count = 0;
+    let maxHeight = 512;
+    for (let i = 0; i < bridges.length; i++) {
+        if (!(bridges[i] > maxHeight)) {
+            return (count = i + 1);
+        } else count = undefined;
+    }
+    return count;
 }
 
 module.exports = checkBusTour;
