@@ -12,7 +12,16 @@
  * @returns {number|undefined}
  */
 function getPower(n) {
-    return undefined;
+    let count = 0;
+    let number = n;
+    if (n === 1) return 0;
+    while (number > 1) {
+        if (number % 2 === 0) {
+            number = number / 2;
+            count += 1;
+        } else return undefined;
+    }
+    return count;
 }
 
-// module.exports = getPower;
+module.exports = getPower;
