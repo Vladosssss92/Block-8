@@ -18,21 +18,19 @@
  * @returns {number}
  */
 function getSpringMeltStreak(temperature) {
-    let days = 1;
+    let period = 0;
+    let maxDays = 0;
     for (let i = 0; i < temperature.length; i++) {
-        if ((temperature[i] < 0 && temperature[i + 1] > 0) || ((temperature[i] > 0) && (temperature[i + 1] > 0))) {
-            days += 1;
-        } 
-        if ((temperature[i] > 0 && temperature[i + 1] < 0)) {
-            days = 0;
-        } 
-        // else {
-        //     days += 1;
-        // }
+        if (temperature[i] > 0) {
+            period += 1;
+            if (period > maxDays) {
+                maxDays = period;
+            }
+        } else {
+            period = 0;
+        }
     }
-    console.log(days);
-    return days;
+    return maxDays;
 }
-getSpringMeltStreak([-20, 30, -40, 50, 10, -10]);
 
-// module.exports = getSpringMeltStreak;
+module.exports = getSpringMeltStreak;

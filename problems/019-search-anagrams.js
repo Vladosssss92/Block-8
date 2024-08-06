@@ -12,7 +12,10 @@
  * @returns {string}
  */
 function searchAnagrams(value) {
-    return undefined;
+    let newArray = [];
+    let valueToArr = value.toLowerCase();
+    console.log(valueToArr)
+    
 }
-
-module.exports = searchAnagrams;
+searchAnagrams ('Вижу апельсин значит живу. Спаниель')
+// module.exports = searchAnagrams;
