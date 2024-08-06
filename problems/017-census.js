@@ -15,10 +15,10 @@
 function census(list) {
     let count = 1;
     for (let i = 0; i < list.length; i++) {
-        if (list[i].gender === "Female") continue;
-        if (list[i].age > list[i + 1].age) {
+        if (list[i].age >= list[list.length-(i+1)].age) {
             console.log(list[i].age);
             count = i + 1;
+            console.log(count+'num')
         }
     }
     return console.log(count);
@@ -26,6 +26,7 @@ function census(list) {
 census([
     { age: 12, gender: "Male" },
     { age: 40, gender: "Female" },
-    { age: 12, gender: "Male" },
+    { age: 17, gender: "Male" },
+    { age: 52, gender: "Female" },
 ]);
 // module.exports = census;

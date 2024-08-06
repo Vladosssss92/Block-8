@@ -15,7 +15,23 @@
  * @returns {boolean}
  */
 function anagram(x, y) {
-    return undefined;
+    let anagramArr = [];
+    let first = x.toLowerCase().split("").sort();
+    let second = y.toLowerCase().split("").sort();
+    if (
+        first.length !== second.length ||
+        first.length === 0 ||
+        second.length === 0
+    )
+        return false;
+    for (let i = 1; i < first.length; i++) {
+        if (first[i] === second[i]) {
+            anagramArr.push(true);
+        } else anagramArr.push(false);
+    }
+    if (anagramArr.includes(false)) {
+        return false;
+    } else return true;
 }
 
 module.exports = anagram;
