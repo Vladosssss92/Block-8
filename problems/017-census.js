@@ -13,20 +13,21 @@
  * @returns {undefined|number}
  */
 function census(list) {
-    let count = 1;
-    for (let i = 0; i < list.length; i++) {
-        if (list[i].age >= list[list.length-(i+1)].age) {
-            console.log(list[i].age);
-            count = i + 1;
-            console.log(count+'num')
+    let citizenAge = 0;
+    let numberInList = 0;
+    let arrMale = [];
+    list.filter((user, i) => {
+        if (user.gender === "Male") {
+            arrMale.push({ age: user.age, index: i + 1 });
+        } else numberInList = undefined;
+    });
+    for (let elem of arrMale) {
+        if (elem.age > citizenAge) {
+            citizenAge = elem.age;
+            numberInList = elem.index;
         }
     }
-    return console.log(count);
+    return numberInList;
 }
-census([
-    { age: 12, gender: "Male" },
-    { age: 40, gender: "Female" },
-    { age: 17, gender: "Male" },
-    { age: 52, gender: "Female" },
-]);
-// module.exports = census;
+
+module.exports = census;
