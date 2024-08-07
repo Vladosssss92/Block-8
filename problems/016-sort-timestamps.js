@@ -14,15 +14,15 @@ function sortTimestamps(list) {
     let firstTimeSplit = firstTime.split(":");
     let secondTimeSplit = secondTime.split(":");
     let newArr = [];
-    if (firstTime === secondTime) return console.log(list);;
+    if (firstTime === secondTime) return console.log(list);
     for (let i = 0; i < firstTimeSplit.length; i++) {
         if (+firstTimeSplit[i] === +secondTimeSplit[i]) continue;
         if (+firstTimeSplit[i] > +secondTimeSplit[i]) {
             newArr.push(secondTime);
             newArr.push(firstTime);
-            return console.log(newArr);
-        } else return console.log(list);
+            return newArr;
+        } else return list;
     }
 }
-sortTimestamps(["08:00:55", "01:56:01"]);
-// module.exports = sortTimestamps;
+// sortTimestamps(["08:00:55", "01:56:01"]);
+module.exports = sortTimestamps;

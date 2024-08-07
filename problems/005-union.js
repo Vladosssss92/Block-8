@@ -14,15 +14,15 @@
  */
 function union(a, b) {
     let newArr = [];
-    for (let i = 0; i < a.length; i++) {
-        for (let j = 0; j < b.length; j++) {
-            if (a[i] === b[j]) {
-                if (!newArr.includes(a[i])) {
-                    newArr.push(a[i]);
+    a.forEach((i) => {
+        b.forEach((j) => {
+            if (i === j) {
+                if (!newArr.includes(i)) {
+                    newArr.push(i);
                 }
             }
-        }
-    }
+        });
+    });
     return newArr.sort((x, y) => x - y);
 }
 
