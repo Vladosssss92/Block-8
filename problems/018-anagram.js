@@ -16,16 +16,16 @@
  */
 function anagram(x, y) {
     let anagramArr = [];
-    let first = x.toLowerCase().split("").sort();
-    let second = y.toLowerCase().split("").sort();
+    let firstWord = x.toLowerCase().split("").sort();
+    let secondWord = y.toLowerCase().split("").sort();
     if (
-        first.length !== second.length ||
-        first.length === 0 ||
-        second.length === 0
+        firstWord.length !== secondWord.length ||
+        firstWord.length === 0 ||
+        secondWord.length === 0
     )
         return false;
-    for (let i = 1; i < first.length; i++) {
-        if (first[i] === second[i]) {
+    for (let i = 1; i < firstWord.length; i++) {
+        if (firstWord[i] === secondWord[i]) {
             anagramArr.push(true);
         } else anagramArr.push(false);
     }
